@@ -2,33 +2,33 @@ const puppeteer = require('puppeteer');
 const { jsPDF } = require('jspdf');
 
 async function generatePDF(req, res) {
-  const { lib, config } = req.body;
+  const { lib,htmlContent, config } = req.body;
 
   // Include an employee table in the HTML content
   // We can add htmlContent from  here or by post request in postman
-//   const htmlContent = `
-//     <html>
-//       <body>
-//         <h1>Employee List</h1>
-//         <table border='1'>
-//           <tr>
-//             <th>ID</th>
-//             <th>Name</th>
-//             <th>Position</th>
-//           </tr>
-//           <tr>
-//             <td>1</td>
-//             <td>John Wick</td>
-//             <td>Manager</td>
-//           </tr>
-//           <tr>
-//             <td>2</td>
-//             <td>Will Smith</td>
-//             <td>Developer</td>
-//           </tr>
-//         </table>
-//       </body>
-//     </html>`;
+  // const htmlContent = `
+  //   <html>
+  //     <body>
+  //       <h1>Employee List</h1>
+  //       <table border='1'>
+  //         <tr>
+  //           <th>ID</th>
+  //           <th>Name</th>
+  //           <th>Position</th>
+  //         </tr>
+  //         <tr>
+  //           <td>1</td>
+  //           <td>John Wick</td>
+  //           <td>Manager</td>
+  //         </tr>
+  //         <tr>
+  //           <td>2</td>
+  //           <td>Will Smith</td>
+  //           <td>Developer</td>
+  //         </tr>
+  //       </table>
+  //     </body>
+  //   </html>`;
 
   try {
     let pdfBuffer;
